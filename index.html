@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>射击游戏皮肤图鉴</title>
+<style>
+:root{color-scheme:dark;font-family:Inter,"Microsoft YaHei",sans-serif;background:#0e1415;color:#e8f2ef}*{box-sizing:border-box}body{margin:0}header,main{max-width:1120px;margin:auto;padding:28px clamp(18px,5vw,56px)}header{padding-top:64px;background:radial-gradient(ellipse at 85% 0%,#244239,transparent 65%)}h1{font-size:clamp(34px,6vw,64px);margin:.2em 0;color:#ddfceb}.eyebrow,a{color:#a4efbd}p{color:#afc1bb}label{display:grid;gap:8px;color:#c4d9cf}input,select{width:100%;padding:12px;background:#182424;border:1px solid #49655c;border-radius:8px;font:inherit;color:inherit}.filters,#cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px}article{padding:22px;border:1px solid #314a42;border-radius:12px;background:#162020}article h2{font-size:19px;margin:.55em 0}article small{color:#b4d4c5}a:focus-visible{outline:2px solid #a4efbd}
+
+.layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:28px}.index h2{font-size:16px}.index button{display:flex;width:100%;justify-content:space-between;text-align:left;margin:4px 0}.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}button{cursor:pointer;padding:9px 12px;border:1px solid #314a42;background:#162020;color:inherit;border-radius:8px;font:inherit}button:hover,button[aria-pressed=true]{border-color:#a4efbd}button[aria-pressed=true]{background:#294738;color:#ddfceb}button:focus-visible{outline:2px solid #a4efbd;outline-offset:2px}article{padding:0;overflow:hidden}article .copy{padding:15px}article .preview{width:100%;padding:0;border:0;border-radius:0;display:block}figure{margin:0}figure img[hidden]{display:none}figure img{display:block;width:100%;aspect-ratio:16/10;object-fit:contain;background:#101718}figcaption{padding:6px 12px;color:#bdd0c7;font-size:12px}dialog{width:min(780px,94vw);background:#162020;color:inherit;border:1px solid #49655c;border-radius:12px;padding:20px}dialog::backdrop{background:#000b}dialog img{width:100%;max-height:62vh;object-fit:contain}dialog button{float:right}.reset{margin-top:6px}@media(max-width:720px){.layout{grid-template-columns:1fr;gap:12px}.index nav{display:flex;overflow:auto;gap:6px}.index button{width:auto;white-space:nowrap;gap:8px}}
+</style>
+<header><div class="eyebrow">FPS / TPS</div><h1>射击游戏皮肤图鉴</h1><p>按作品查找枪皮、近战外观和角色皮肤，查看官方图文出处。</p></header>
+<main class="layout"><aside class="index"><h2>游戏索引</h2><nav id="game" aria-label="游戏筛选"></nav></aside><section><label>搜索皮肤<input id="query" type="search" placeholder="皮肤名、武器名或角色名"></label><div class="tabs" id="type" role="group" aria-label="皮肤类型"></div><p id="status" role="status"></p><button class="reset" id="reset" hidden>清除筛选</button><section id="cards" aria-label="皮肤条目"></section></section></main>
+<dialog id="detail" aria-labelledby="detail-title"><form method="dialog"><button autofocus>关闭</button></form><h2 id="detail-title"></h2><figure id="detail-art"></figure><p><a id="detail-source" target="_blank" rel="noopener noreferrer">查看官方图文 ↗</a></p></dialog>
+<script src="catalog.js"></script>
+<script>
+const games = ['Apex Legends','堡垒之夜','使命召唤手游','使命召唤：现代战争 4','Marathon','和平精英','PUBG 端游','PUBG Mobile','无畏契约端游','无畏契约手游','CS2','三角洲行动'];
+const types = ['枪皮','近战皮肤','角色皮肤'];
+const get = id => document.getElementById(id);
+const [query,game,type,status,cards] = ['query','game','type','status','cards'].map(get);
+let selectedGame = '';
+let selectedType = '';
+const detail = get('detail');
+function makeFilters(container, values, selected, count, choose) {
+  container.replaceChildren();
+  for (const value of ['', ...values]) {
+    const button = document.createElement('button');
+    button.textContent = (value || '全部') + ' · ' + count(value);
+    button.setAttribute('aria-pressed', String(value === selected));
+    button.addEventListener('click', () => {
+      const index = Array.from(container.children).indexOf(button);
+      choose(value);
+      render();
+      container.children[index].focus();
+    });
+    container.append(button);
+  }
+}
+function preview(item) {
+  const figure = document.createElement('figure');
+  const image = document.createElement('img');
+  const caption = document.createElement('figcaption');
+  image.alt = item.imageLabel;
+  image.addEventListener('error', () => {
+    image.hidden = true;
+    caption.textContent = '预览图加载失败';
+  });
+  image.src = item.image;
+  caption.textContent = item.imageLabel;
+  figure.append(image, caption);
+  return figure;
+}
+function render() {
+  const term = query.value.trim().toLowerCase();
+  const matching = catalog.filter(item => [item.name,item.base,item.game,item.type].join(' ').toLowerCase().includes(term));
+  const gameMatches = item => !selectedGame || selectedGame === item.game;
+  const typeMatches = item => !selectedType || selectedType === item.type;
+  makeFilters(game, games, selectedGame, value => matching.filter(item => typeMatches(item) && (!value || item.game === value)).length, value => selectedGame = value);
+  makeFilters(type, types, selectedType, value => matching.filter(item => gameMatches(item) && (!value || item.type === value)).length, value => selectedType = value);
+  const results = matching.filter(item => gameMatches(item) && typeMatches(item));
+  status.textContent = results.length ? results.length + ' 条已收录皮肤' :
+    selectedGame && !catalog.some(item => item.game === selectedGame) ? '这个游戏的皮肤资料待补充。' : '没有匹配的皮肤。';
+  get('reset').hidden = results.length > 0 || !(term || selectedGame || selectedType);
+  cards.replaceChildren();
+  for (const item of results) {
+    const card = document.createElement('article');
+    const copy = document.createElement('div');
+    copy.className = 'copy';
+    const button = document.createElement('button');
+    button.className = 'preview';
+    button.setAttribute('aria-label', '放大预览 ' + item.name);
+    button.append(preview(item));
+    button.addEventListener('click', () => {
+      get('detail-title').textContent = item.name;
+      get('detail-art').replaceChildren(...preview(item).children);
+      get('detail-source').href = item.source;
+      detail.showModal();
+    });
+    const label = document.createElement('small');
+    label.textContent = item.game + ' / ' + item.type;
+    const heading = document.createElement('h2');
+    heading.textContent = item.name;
+    const base = document.createElement('p');
+    base.textContent = item.base;
+    copy.append(label,heading,base);
+    card.append(button,copy);
+    cards.append(card);
+  }
+}
+query.addEventListener('input',render);
+get('reset').addEventListener('click', () => {
+  query.value = selectedGame = selectedType = '';
+  render();
+  query.focus();
+});
+render();
+</script></html>
