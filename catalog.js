@@ -15,5 +15,8 @@ const catalog = [
   {"game": "使命召唤：现代战争 4", "type": "枪皮", "name": "Occultus", "base": "M4", "image": "assets/mw4-s1-010.webp", "imageLabel": "官方奖励合图", "source": "https://www.callofduty.com/blog/2026/11/call-of-duty-modern-warfare-4-season-1-battle-pass-blackcell-store-bundles", "period": "2026-11 · 第 1 赛季"},
   {"game": "使命召唤：现代战争 4", "type": "枪皮", "name": "Exitium", "base": "M4", "image": "assets/mw4-s1-010.webp", "imageLabel": "官方奖励合图", "source": "https://www.callofduty.com/blog/2026/11/call-of-duty-modern-warfare-4-season-1-battle-pass-blackcell-store-bundles", "period": "2026-11 · 第 1 赛季"},
   {"game": "PUBG 端游", "type": "枪皮", "name": "Pretend Prototype", "base": "SLR", "image": "assets/pubg-pretend-prototype.jpg", "imageLabel": "官方外观图", "source": "https://pubg.com/en/news/10427", "period": "2026-07-15 · PC"},
-  {"game": "PUBG 端游", "type": "角色皮肤", "name": "Just Married", "base": "Survivor Pass 套装", "image": "assets/pubg-just-married.jpg", "imageLabel": "官方通行证外观图", "source": "https://pubg.com/en/news/10427", "period": "2026-07-15 · PC"}
+  {"game": "PUBG 端游", "type": "角色皮肤", "name": "Just Married", "base": "Survivor Pass 套装", "image": "assets/pubg-just-married.jpg", "imageLabel": "官方通行证外观图", "source": "https://pubg.com/en/news/10427", "period": "2026-07-15 · PC"},
+  {"game": "PUBG 端游", "type": "枪皮", "name": "Faded Ghost", "base": "AWM", "image": "assets/pubg-faded-ghost.jpg", "imageLabel": "官方成长型枪皮公告图", "source": "https://pubg.com/en/news/9468", "period": "2025-12"},
+  {"game": "PUBG 端游", "type": "枪皮", "name": "Time Keeper", "base": "M416", "image": "assets/pubg-time-keeper.jpg", "imageLabel": "官方成长型枪皮公告图", "source": "https://pubg.com/en/news/9707", "period": "2026-02"},
+  {"game": "PUBG 端游", "type": "枪皮", "name": "Cute Aggression", "base": "Mini14", "image": "assets/pubg-cute-aggression.jpg", "imageLabel": "官方成长型枪皮公告图", "source": "https://pubg.com/en/news/11306", "period": "2026-11"}
 ];
