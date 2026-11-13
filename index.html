@@ -78,7 +78,7 @@ function render() {
     const heading = document.createElement('h2');
     heading.textContent = item.name;
     const base = document.createElement('p');
-    base.textContent = item.base;
+    base.textContent = [item.base, item.period].filter(Boolean).join(' · ');
     copy.append(label,heading,base);
     card.append(button,copy);
     cards.append(card);
