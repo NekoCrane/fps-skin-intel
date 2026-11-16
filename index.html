@@ -42,9 +42,12 @@ function preview(item) {
     image.hidden = true;
     caption.textContent = '预览图加载失败';
   });
-  image.src = item.image;
+  if (item.image) {
+    image.src = item.image;
+    figure.append(image);
+  }
   caption.textContent = item.imageLabel;
-  figure.append(image, caption);
+  figure.append(caption);
   return figure;
 }
 function render() {
