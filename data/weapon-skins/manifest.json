@@ -1,27 +1,27 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-02T19:06:32Z",
-  "total": 15276,
+  "updatedAt": "2026-11-23T06:13:45Z",
+  "total": 15401,
   "games": [
     {
       "id": "valorant",
       "name": "无畏契约",
       "url": "data/weapon-skins/valorant.json",
-      "count": 1391,
-      "meleeCount": 176,
+      "count": 1396,
+      "meleeCount": 177,
       "withVideoCount": 585,
       "withAnimationCount": 0,
-      "updatedAt": "2026-11-02T16:56:35Z",
+      "updatedAt": "2026-11-23T06:13:44Z",
       "coverage": {
-        "sourceRecordCount": 1433,
-        "cataloguedCount": 1391,
+        "sourceRecordCount": 1438,
+        "cataloguedCount": 1396,
         "excluded": {
           "random_favorite": 21,
           "default": 21
         },
         "weaponCount": 21,
-        "gunCount": 1215,
-        "meleeCount": 176,
+        "gunCount": 1219,
+        "meleeCount": 177,
         "withVideoCount": 585,
         "videoCount": 2746,
         "reviewedVideoCount": 2,
@@ -39,7 +39,7 @@
         "name": "Valorant-API",
         "type": "community_catalogue",
         "url": "https://valorant-api.com/",
-        "retrievedAt": "2026-11-02T16:56:35Z"
+        "retrievedAt": "2026-11-23T06:13:44Z"
       }
     },
     {
@@ -446,20 +446,20 @@
       "id": "cs2",
       "name": "CS2",
       "url": "data/weapon-skins/cs2.json",
-      "count": 2025,
-      "meleeCount": 576,
+      "count": 2145,
+      "meleeCount": 696,
       "withVideoCount": 0,
       "withAnimationCount": 0,
-      "updatedAt": "2026-11-02T16:56:39Z",
+      "updatedAt": "2026-11-23T06:13:45Z",
       "coverage": {
-        "sourceRecordCount": 2126,
-        "cataloguedCount": 2025,
+        "sourceRecordCount": 2246,
+        "cataloguedCount": 2145,
         "excluded": {
           "手套": 94,
           "装备": 7
         },
         "gunCount": 1449,
-        "meleeCount": 576,
+        "meleeCount": 696,
         "weaponCount": 54,
         "withVideoCount": 0,
         "videoCount": 0,
@@ -473,7 +473,7 @@
         "name": "ByMykel/CSGO-API",
         "type": "community_catalogue",
         "url": "https://github.com/ByMykel/CSGO-API",
-        "retrievedAt": "2026-11-02T16:56:39Z"
+        "retrievedAt": "2026-11-23T06:13:45Z"
       }
     },
     {
