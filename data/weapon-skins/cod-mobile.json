@@ -243193,7 +243193,13 @@
       "sourceType": "official",
       "thumbnailUrl": "https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/body/mw4/CODM-MW4-TOUT.jpg",
       "publicationStatus": "ready",
-      "associatedSkinIds": []
+      "associatedSkinIds": [],
+      "imageProof": {
+        "sha256": "527c3aed9af7069ba8205470b908773bb3d3f252054bac0c72d418dfc69f5a05",
+        "width": 1920,
+        "height": 1080,
+        "format": "JPEG"
+      }
     },
     {
       "id": "codm-official-96b14c1cb5f429ef",
@@ -243204,7 +243210,13 @@
       "sourceType": "official",
       "thumbnailUrl": "https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/body/codm/s9-vampires-werewolves/CODM-S9-VW-ANNOUNCEMENT-TOUT.jpg",
       "publicationStatus": "ready",
-      "associatedSkinIds": []
+      "associatedSkinIds": [],
+      "imageProof": {
+        "sha256": "63ab0306b70a8d2cb075ccafe586937022df29bbb55abdf07963204470832aca",
+        "width": 1920,
+        "height": 1069,
+        "format": "JPEG"
+      }
     }
   ]
 }
