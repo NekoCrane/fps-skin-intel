@@ -330,11 +330,13 @@ def main() -> int:
             inventory_path = DATA / 'delta-bilibili-inventory.json'
             if game == 'delta-force' and inventory_path.exists():
                 inventory = json.loads(inventory_path.read_text(encoding='utf-8'))
-                snapshot['coverage'].update(catalogScope='official_account_recent_year',
+                from sync_weapon_delta_bilibili import source_updates
+                snapshot['sourceUpdates'] = source_updates()
+                snapshot['coverage'].update(catalogScope='official_account_all_available_history',
                     indexedAccountVideos=inventory['indexedAccountVideos'],
-                    candidateVideos=inventory['candidateCount'], cutoff=inventory['cutoff'],
+                    candidateVideos=inventory['candidateCount'], collectionScope='all_available_history',
                     mappedVideos=sum(row['disposition'] == 'named_weapons_mapped' for row in inventory['records']),
-                    note='已遍历官方B站账号公开投稿标题，逐条核对外观候选的作者与简介，并按具名武器拆分近一年资料。未具名枪型、无关键词投稿和视频画面仍有待补；封面不是单件渲染，未声称逐帧审阅。')
+                    note='持续补全全部可核实历史外观，每周一北京时间11点检查最新资讯。已核官方投稿标题与简介，按具名武器拆分；未具名枪型、无关键词投稿及视频画面仍待补核。封面可能包含同系列物品。')
             atomic_json(path, snapshot)
             print(json.dumps({"game": game, "count": len(entries), "withVideo": snapshot["coverage"]["entriesWithVideo"], "path": str(path.relative_to(ROOT))}, ensure_ascii=False))
         except Exception as error:

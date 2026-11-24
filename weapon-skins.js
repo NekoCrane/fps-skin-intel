@@ -209,9 +209,12 @@ const WeaponSkins = (() => {
     const entries = filtered(), visible = entries.slice(0, archive.limit);
     const hasCreatorResults = (archive.game === 'call-of-duty' || archive.game === 'all') && archive.media !== 'image' &&
       inspectionEntries(archive.snapshots.get('call-of-duty')?.inspectionLibrary).length > 0;
+    const hasNewsResults = games.some(game => (archive.game === 'all' || archive.game === game.id) &&
+      newsEntries((archive.snapshots.get(game.id)?.sourceUpdates || []).map(item => ({ ...item, gameName: game.name }))).length);
     grid.innerHTML = loading ? '<div class="loading-state">正在读取武器外观与动作资料…</div>' : visible.length ? visible.map(card).join('') :
       '<div class="empty-state">' + icon('search') + '<h3>没有找到匹配的武器外观</h3><p>' +
-      (hasCreatorResults ? '上方的检视视频资料中可查看对应原作者投稿。' : '可搜索皮肤、英文名、枪型或刀，例如“RGX”“狂徒”“蝴蝶”。') +
+      (hasNewsResults ? '上方已有相关官方资讯，单件外观仍待核对。' : hasCreatorResults ?
+        '上方的检视视频资料中可查看对应原作者投稿。' : '可搜索皮肤、英文名、枪型或刀，例如“RGX”“狂徒”“蝴蝶”。') +
       '</p><button type="button" class="button" data-skin-reset>清除筛选</button></div>';
     grid.setAttribute('aria-busy', String(loading));
     const videos = entries.filter(entry => mediaList(entry).some(isVideo)).length;
@@ -233,6 +236,7 @@ const WeaponSkins = (() => {
     document.getElementById('skinScopeNote').textContent = coverageNote + (pendingImages > 0 ?
       ' 已对账 ' + Number(chosen.coverage.cataloguedCount).toLocaleString('zh-CN') + ' 款，其中 ' + scoped.length.toLocaleString('zh-CN') +
       ' 款有图可浏览，' + pendingImages.toLocaleString('zh-CN') + ' 款缺图待补。' : '');
+    renderSourceUpdates();
     renderInspectionLibrary();
     document.getElementById('skinFilterSummary').textContent = [state.query ? '搜索：' + state.query : '',
       archive.game !== 'all' ? gameInfo(archive.game).name : '',
@@ -240,6 +244,35 @@ const WeaponSkins = (() => {
       archive.type === 'melee' ? '刀与近战' : archive.type === 'gun' ? '枪械皮肤' : '',
       archive.media === 'inspect' ? '含检视资料' : archive.media === 'video' ? '含视频' : archive.media === 'image' ? '外观图目录' : ''
     ].filter(Boolean).join(' · ');
+  }
+  function newsEntries(items, query = state.query) {
+    const words = String(query || '').toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
+    return (items || []).filter(item => item.publicationStatus === 'ready' && item.sourceType === 'official' &&
+      /^\d{4}-\d{2}-\d{2}$/.test(item.publishedDate || '') && link(item.sourceUrl) &&
+      words.every(word => [item.title, item.sourceName, item.gameName].join(' ').toLocaleLowerCase().includes(word)))
+      .sort((a, b) => b.publishedDate.localeCompare(a.publishedDate));
+  }
+  function newsCard(item) {
+    const original = link(item.sourceUrl), thumbnail = link(item.thumbnailUrl);
+    return '<article class="weapon-inspection-card">' + (thumbnail ? '<a href="' + esc(original) +
+      '" target="_blank" rel="noopener noreferrer"><img src="' + esc(thumbnail) + '" alt="' + esc(item.title) +
+      '" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="320" height="180"></a>' : '') +
+      '<div><p><time datetime="' + esc(item.publishedDate) + '">' + esc(item.publishedDate) + '</time> · ' + esc(item.gameName) +
+      '</p><h3><a href="' + esc(original) + '" target="_blank" rel="noopener noreferrer">' + esc(item.title) +
+      '</a></h3><p>' + esc(item.sourceName) + '</p></div></article>';
+  }
+  function renderSourceUpdates() {
+    const target = document.getElementById('skinSourceUpdates');
+    if (!target) return;
+    const items = newsEntries(games.filter(game => archive.game === 'all' || archive.game === game.id)
+      .flatMap(game => (archive.snapshots.get(game.id)?.sourceUpdates || []).map(item => ({ ...item, gameName: game.name }))));
+    target.hidden = !items.length;
+    if (target.hidden) { target.innerHTML = ''; return; }
+    target.innerHTML = '<div class="weapon-inspection-library"><h2>最新外观资讯</h2>' +
+      '<p>按官方发布日期排序；消息可能包含整套或多件外观，具体物品与上线时间以原文为准。</p>' +
+      '<div class="weapon-inspection-grid">' + items.slice(0, 3).map(newsCard).join('') + '</div>' +
+      (items.length > 3 ? '<details><summary>更多官方动态（' + (items.length - 3) + '）</summary><div class="weapon-inspection-grid">' +
+        items.slice(3, 30).map(newsCard).join('') + '</div></details>' : '') + '</div>';
   }
   function inspectionEntries(items, filters = archive, query = state.query) {
     const words = String(query || '').toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
@@ -512,5 +545,5 @@ const WeaponSkins = (() => {
   }
   return { archive, games, count, ensure, bind, render, reset, readRoute, hash, filtered, card, detail, stop, markdown,
     matchesQuery, normalise, filterEntries, mediaList, containsInspect, isVideo, chromaCount, chromaImage, link, providerId,
-    inspectionEntries, inspectionCard, exportList };
+    inspectionEntries, inspectionCard, newsEntries, newsCard, exportList };
 })();

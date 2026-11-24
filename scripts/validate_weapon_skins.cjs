@@ -25,6 +25,17 @@ for (const game of manifest.games) {
   assert.equal(data.game, game.id);
   assert.ok(!Number.isNaN(Date.parse(data.updatedAt)), game.id + ' source timestamp');
   const ready = data.skins.filter(skin => skin.publicationStatus === 'ready');
+  const newsIds = new Set();
+  for (const news of data.sourceUpdates || []) {
+    assert.ok(news.id && !newsIds.has(news.id), 'Unique official-news identity'); newsIds.add(news.id);
+    assert.equal(news.sourceType, 'official');
+    assert.equal(news.publicationStatus, 'ready');
+    assert.ok(news.title && news.sourceName);
+    assert.match(news.publishedDate, /^\d{4}-\d{2}-\d{2}$/);
+    http(news.sourceUrl, 'Official-news source');
+    http(news.thumbnailUrl, 'Official-news cover');
+    for (const id of news.associatedSkinIds || []) assert.ok(ready.some(skin => skin.id === id), 'News links an existing skin');
+  }
   assert.equal(ready.length, game.count, game.id + ' manifest count');
   if (game.id === 'call-of-duty') {
     const categories = new Map();
@@ -196,6 +207,13 @@ const bo6 = api.filterEntries(normal, { ...filters, game: 'call-of-duty', type: 
 assert.ok(bo6.length && bo6.every(skin => skin.gameEdition === 'black-ops-6'), 'COD blueprint editions filter independently');
 assert.equal(api.filterEntries(normal, { ...filters, game: 'call-of-duty', type: 'all' }, '打印命运').length, 1, 'Reviewed Chinese creator title finds exactly the associated blueprint');
 assert.equal(api.link('javascript:alert(1)'), '');
+const newsSample = { id: 'official-news-test', title: '新系列：枪型待核', publishedDate: '2026-11-20',
+  sourceName: '官方账号', sourceType: 'official', publicationStatus: 'ready', sourceUrl: 'https://example.com/news',
+  thumbnailUrl: 'https://example.com/cover.jpg' };
+assert.equal(api.newsEntries([newsSample], '新系列').length, 1, 'Official news remains visible without weapon mapping');
+assert.equal(api.newsEntries([{ ...newsSample, sourceType: 'community' }], '').length, 0);
+assert.equal(api.newsEntries([{ ...newsSample, sourceUrl: 'javascript:alert(1)' }], '').length, 0);
+assert.ok(!api.newsCard({ ...newsSample, title: '<img src=x onerror=alert(1)>' }).includes('<img src=x'), 'News title escaping');
 assert.equal(api.link('https://user:password@example.com/x'), '');
 assert.equal(api.providerId({ provider: 'youtube', url: 'https://youtube.com.evil.example/watch?v=abcdefghijk' }), '');
 assert.equal(api.providerId({ provider: 'bilibili', url: 'https://bilibili.com.evil.example/video/BV11jdbB8EsB/' }), '');
