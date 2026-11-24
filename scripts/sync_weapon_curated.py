@@ -50,8 +50,9 @@ def request(url: str) -> bytes:
         raise RuntimeError("Offline mode requires a retained source and image cache")
     if not CURL:
         raise RuntimeError("curl is required for public HTTPS source requests")
+    platform_flags = ["--ssl-revoke-best-effort"] if os.name == 'nt' else []
     process = subprocess.run(
-        [CURL, "--silent", "--show-error", "--location", "--fail", "--connect-timeout", "10", "--max-time", "35", url],
+        [CURL, *platform_flags, "--silent", "--show-error", "--location", "--fail", "--connect-timeout", "10", "--max-time", "35", url],
         capture_output=True, check=False,
     )
     if process.returncode:
@@ -226,7 +227,8 @@ def delta_skins(offline: bool) -> list[dict]:
                 reviewNote="已核官方作者和简介中的单品身份、配色与上架窗口；动作画面和时间段待观看核实。")
 
         entries.append(entry)
-    return entries
+    from sync_weapon_delta_bilibili import merge
+    return merge(entries, offline)
 
 
 def cod_skins(offline: bool) -> list[dict]:
@@ -325,6 +327,14 @@ def main() -> int:
                 },
                 "skins": entries,
             }
+            inventory_path = DATA / 'delta-bilibili-inventory.json'
+            if game == 'delta-force' and inventory_path.exists():
+                inventory = json.loads(inventory_path.read_text(encoding='utf-8'))
+                snapshot['coverage'].update(catalogScope='official_account_recent_year',
+                    indexedAccountVideos=inventory['indexedAccountVideos'],
+                    candidateVideos=inventory['candidateCount'], cutoff=inventory['cutoff'],
+                    mappedVideos=sum(row['disposition'] == 'named_weapons_mapped' for row in inventory['records']),
+                    note='已遍历官方B站账号公开投稿标题，逐条核对外观候选的作者与简介，并按具名武器拆分近一年资料。未具名枪型、无关键词投稿和视频画面仍有待补；封面不是单件渲染，未声称逐帧审阅。')
             atomic_json(path, snapshot)
             print(json.dumps({"game": game, "count": len(entries), "withVideo": snapshot["coverage"]["entriesWithVideo"], "path": str(path.relative_to(ROOT))}, ensure_ascii=False))
         except Exception as error:

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-24T02:44:49.720769+00:00",
-  "total": 13331,
+  "updatedAt": "2026-11-24T04:11:52.776462+00:00",
+  "total": 13453,
   "games": [
     {
       "id": "valorant",
@@ -46,24 +46,28 @@
       "id": "delta-force",
       "name": "三角洲行动",
       "url": "data/weapon-skins/delta-force.json",
-      "count": 19,
-      "meleeCount": 6,
-      "withVideoCount": 19,
+      "count": 141,
+      "meleeCount": 12,
+      "withVideoCount": 141,
       "withAnimationCount": 0,
-      "updatedAt": "2026-11-24T02:44:49.720769+00:00",
+      "updatedAt": "2026-11-24T04:11:52.776462+00:00",
       "coverage": {
         "status": "partial",
-        "catalogScope": "curated_featured",
+        "catalogScope": "official_account_recent_year",
         "complete": false,
-        "entryCount": 19,
-        "entriesWithVideo": 19,
+        "entryCount": 141,
+        "entriesWithVideo": 141,
         "liveMetadataRefreshed": true,
-        "note": "首批精选资料，不代表本游戏全部历史皮肤。动作说明、视频身份与实际片段核验分别记录；未将首次采集时间或预告日期当作实际上线日期。",
+        "note": "已遍历官方B站账号公开投稿标题，逐条核对外观候选的作者与简介，并按具名武器拆分近一年资料。未具名枪型、无关键词投稿和视频画面仍有待补；封面不是单件渲染，未声称逐帧审阅。",
         "remaining": [
           "完整历史皮肤目录",
           "动作片段起止与触发条件",
           "精确首发日期与地区差异"
-        ]
+        ],
+        "indexedAccountVideos": 788,
+        "candidateVideos": 200,
+        "cutoff": "2025-11-24",
+        "mappedVideos": 68
       },
       "source": {
         "name": "官方资料与经复核的原作者媒体选集",
