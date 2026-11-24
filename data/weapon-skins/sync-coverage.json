@@ -1,1 +1,101 @@
-{"schemaVersion":1,"games":{"valorant":{"status":"success","lastAttemptAt":"2026-11-23T06:13:42Z","lastSuccessfulAt":"2026-11-23T06:13:44Z","snapshotPath":"data/weapon-skins/valorant.json","sourceRecordCount":1438,"cataloguedCount":1396,"excluded":{"random_favorite":21,"default":21},"weaponCount":21,"gunCount":1219,"meleeCount":177,"withVideoCount":585,"videoCount":2746,"reviewedVideoCount":1,"sampleReviewedVideoCount":0,"sourceConfirmedVideoCount":1,"previewVideoCount":2745,"dedicatedInspectVideoCount":1,"imageFallbackCount":47,"scope":"本次社区接口的非默认枪械与近战外观目录；不保证已覆盖所有地区和历史发行。","mediaScope":"客户端视频字段用于索引动作预览；抽帧核对样本与官方投稿确认的检视分别标记，不代表全部视频可播或全部皮肤含独立检视。","retainedHistoricalCount":0},"cs2":{"status":"success","lastAttemptAt":"2026-11-23T06:13:45Z","lastSuccessfulAt":"2026-11-23T06:13:45Z","snapshotPath":"data/weapon-skins/cs2.json","sourceRecordCount":2246,"cataloguedCount":2145,"excluded":{"手套":94,"装备":7},"gunCount":1449,"meleeCount":696,"weaponCount":54,"withVideoCount":0,"videoCount":0,"reviewedVideoCount":0,"scope":"本次上游按涂装聚合的枪械与刀皮目录，排除手套、装备与探员；不是每个磨损、模板和单件库存的枚举。","mediaScope":"上游仅提供静态资源；第一人称检视录像另行关联，不将图片或游戏内检视链接称为动作视频。","retainedHistoricalCount":0}},"updatedAt":"2026-11-23T06:13:46Z"}
+{
+  "schemaVersion": 1,
+  "games": {
+    "valorant": {
+      "status": "success",
+      "lastAttemptAt": "2026-11-23T06:13:42Z",
+      "lastSuccessfulAt": "2026-11-23T06:13:44Z",
+      "snapshotPath": "data/weapon-skins/valorant.json",
+      "sourceRecordCount": 1438,
+      "cataloguedCount": 1396,
+      "excluded": {
+        "random_favorite": 21,
+        "default": 21
+      },
+      "weaponCount": 21,
+      "gunCount": 1219,
+      "meleeCount": 177,
+      "withVideoCount": 585,
+      "videoCount": 2746,
+      "reviewedVideoCount": 1,
+      "sampleReviewedVideoCount": 0,
+      "sourceConfirmedVideoCount": 1,
+      "previewVideoCount": 2745,
+      "dedicatedInspectVideoCount": 1,
+      "imageFallbackCount": 47,
+      "scope": "本次社区接口的非默认枪械与近战外观目录；不保证已覆盖所有地区和历史发行。",
+      "mediaScope": "客户端视频字段用于索引动作预览；抽帧核对样本与官方投稿确认的检视分别标记，不代表全部视频可播或全部皮肤含独立检视。",
+      "retainedHistoricalCount": 0
+    },
+    "cs2": {
+      "status": "success",
+      "lastAttemptAt": "2026-11-23T06:13:45Z",
+      "lastSuccessfulAt": "2026-11-23T06:13:45Z",
+      "snapshotPath": "data/weapon-skins/cs2.json",
+      "sourceRecordCount": 2246,
+      "cataloguedCount": 2145,
+      "excluded": {
+        "手套": 94,
+        "装备": 7
+      },
+      "gunCount": 1449,
+      "meleeCount": 696,
+      "weaponCount": 54,
+      "withVideoCount": 0,
+      "videoCount": 0,
+      "reviewedVideoCount": 0,
+      "scope": "本次上游按涂装聚合的枪械与刀皮目录，排除手套、装备与探员；不是每个磨损、模板和单件库存的枚举。",
+      "mediaScope": "上游仅提供静态资源；第一人称检视录像另行关联，不将图片或游戏内检视链接称为动作视频。",
+      "retainedHistoricalCount": 0
+    },
+    "delta-force": {
+      "status": "success",
+      "lastAttemptAt": "2026-11-24T02:27:38.736266+00:00",
+      "lastSuccessfulAt": "2026-11-24T02:11:01.907314+00:00",
+      "snapshotPath": "data/weapon-skins/delta-force.json",
+      "note": "已刷新原精选视频元数据并新增3条官方视频简介支持的外观，动作画面待核",
+      "retainedLastGoodSnapshot": false
+    },
+    "cod-mobile": {
+      "status": "success",
+      "lastAttemptAt": "2026-11-24T02:27:38.736266+00:00",
+      "lastSuccessfulAt": "2026-11-24T02:10:57Z",
+      "snapshotPath": "data/weapon-skins/cod-mobile.json",
+      "note": "国际服图鉴及国服99页990篇原稿刷新完成",
+      "retainedLastGoodSnapshot": false
+    },
+    "cf-mobile": {
+      "status": "success",
+      "lastAttemptAt": "2026-11-24T02:27:38.736266+00:00",
+      "lastSuccessfulAt": "2026-11-24T02:13:44.145028Z",
+      "snapshotPath": "data/weapon-skins/cf-mobile.json",
+      "note": "7789篇官方栏目索引，1675篇候选正文，首次超时后缓存接续成功",
+      "retainedLastGoodSnapshot": false
+    },
+    "cfhd": {
+      "status": "success",
+      "lastAttemptAt": "2026-11-24T02:27:38.736266+00:00",
+      "lastSuccessfulAt": "2026-11-24T02:19:27.673259Z",
+      "snapshotPath": "data/weapon-skins/cfhd.json",
+      "note": "76种武器1790项资源；匹配本次源URL且本地哈希通过的旧图复用原时间；1个资源失败，10条待补",
+      "retainedLastGoodSnapshot": false
+    },
+    "call-of-duty": {
+      "status": "success",
+      "lastAttemptAt": "2026-11-24T02:27:38.736266+00:00",
+      "lastSuccessfulAt": "2026-11-24T02:27:22Z",
+      "snapshotPath": "data/weapon-skins/call-of-duty.json",
+      "note": "目录与2554张候选图检查完成",
+      "retainedLastGoodSnapshot": false
+    },
+    "apex": {
+      "status": "failed",
+      "lastAttemptAt": "2026-11-24T02:27:38.736266+00:00",
+      "lastSuccessfulAt": "2026-11-02T17:41:30+00:00",
+      "snapshotPath": "data/weapon-skins/apex.json",
+      "note": "Wiki首次请求及断点重试均HTTP429，保留上次成功快照",
+      "retainedLastGoodSnapshot": true
+    }
+  },
+  "updatedAt": "2026-11-24T02:27:38.736266+00:00"
+}

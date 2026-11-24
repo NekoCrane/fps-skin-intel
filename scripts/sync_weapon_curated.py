@@ -161,6 +161,12 @@ DELTA = [
      "短刃外观。官方实录已关联；挥刀动作以原片为准，尚未单独标注检视时间段。", ["attack"]),
     ("bounty", "BV1RPCCBDETf", "AS Val · 悬赏令", "AS Val", "gun", "突击步枪", "典藏",
      "AS Val 典藏外观；官方说明有多套检视动作，检视图案随击败干员数量变化，具体阶段阈值未在源稿中给出。", ["inspect"]),
+    ("gold-matrix-vector", "BV1DbQqBUEc1", "Vector · 鎏金矩阵", "Vector", "gun", "冲锋枪", "",
+     "官方视频简介介绍白金配色、矩阵结构与金属设计；该系列于2026年3月25日至5月23日限时上架。对应系列宣传封面，动作细节待观看核实。", []),
+    ("gold-matrix-scar-h", "BV1DbQqBUEc1", "SCAR-H · 鎏金矩阵", "SCAR-H", "gun", "战斗步枪", "",
+     "官方视频简介介绍白金配色、矩阵结构与金属设计；该系列于2026年3月25日至5月23日限时上架。对应系列宣传封面，动作细节待观看核实。", []),
+    ("gold-matrix-m4a1", "BV1DbQqBUEc1", "M4A1 · 鎏金矩阵", "M4A1", "gun", "突击步枪", "",
+     "官方视频简介介绍白金配色、矩阵结构与金属设计；该系列于2026年3月25日至5月23日限时上架。对应系列宣传封面，动作细节待观看核实。", []),
 ]
 
 
@@ -186,6 +192,23 @@ def delta_skins(offline: bool) -> list[dict]:
             "rightsNote": "源稿标注未经作者授权禁止转载；通过原站播放器观看，保留作者与来源。",
         }]
         entry["tags"] = [rarity, *contains] if rarity else contains
+        if slug.startswith("gold-matrix-"):
+            if weapon not in meta.get("desc", "") or "鎏金矩阵" not in meta["title"]:
+                raise ValueError("Named weapon is missing from the official video description")
+            receipt = json.loads((CACHE / ("delta-" + slug + ".meta.json")).read_text(encoding="utf-8"))
+            checked_at = receipt["retrievedAt"][:10]
+            entry["firstSeenAt"] = checked_at
+            entry["reviewedAt"] = checked_at
+            entry["sourceEvidence"] = {
+                "basis": "official_video_description",
+                "checkedAt": checked_at,
+                "summary": description,
+                "authorId": str(meta["owner"]["mid"]),
+                "publishedDate": entry["publishedDate"],
+            }
+            entry["media"][0].update(reviewStatus="source_confirmed", reviewedAt=checked_at,
+                reviewNote="已核官方作者和简介中的单品身份、配色与上架窗口；动作画面和时间段待观看核实。")
+
         entries.append(entry)
     return entries
 

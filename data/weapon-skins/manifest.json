@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-23T06:13:45Z",
-  "total": 15401,
+  "updatedAt": "2026-11-24T02:27:22Z",
+  "total": 15468,
   "games": [
     {
       "id": "valorant",
@@ -46,18 +46,18 @@
       "id": "delta-force",
       "name": "三角洲行动",
       "url": "data/weapon-skins/delta-force.json",
-      "count": 8,
+      "count": 11,
       "meleeCount": 6,
-      "withVideoCount": 8,
+      "withVideoCount": 11,
       "withAnimationCount": 0,
-      "updatedAt": "2026-11-02T15:20:48.906015+00:00",
+      "updatedAt": "2026-11-24T02:11:01.907314+00:00",
       "coverage": {
         "status": "partial",
         "catalogScope": "curated_featured",
         "complete": false,
-        "entryCount": 8,
-        "entriesWithVideo": 8,
-        "liveMetadataRefreshed": true,
+        "entryCount": 11,
+        "entriesWithVideo": 11,
+        "liveMetadataRefreshed": false,
         "note": "首批精选资料，不代表本游戏全部历史皮肤。动作说明、视频身份与实际片段核验分别记录；未将首次采集时间或预告日期当作实际上线日期。",
         "remaining": [
           "完整历史皮肤目录",
@@ -74,16 +74,16 @@
       "id": "call-of-duty",
       "name": "使命召唤",
       "url": "data/weapon-skins/call-of-duty.json",
-      "count": 2343,
-      "meleeCount": 135,
+      "count": 2390,
+      "meleeCount": 136,
       "withVideoCount": 2,
       "withAnimationCount": 0,
-      "updatedAt": "2026-11-02T19:06:32Z",
+      "updatedAt": "2026-11-24T02:27:22Z",
       "coverage": {
         "status": "partial",
         "catalogScope": "observed_gamesatlas_cod_pc_blueprint_index",
         "complete": false,
-        "entryCount": 2343,
+        "entryCount": 2390,
         "entriesWithVideo": 2,
         "note": "逐件读取GamesAtlas公开端游蓝图目录；未混入CODM。作品和基础武器分开，不重复计入Warzone继承使用。该站内容和图像仍有缺漏，不代表COD全历史或官方完整资源。",
         "remaining": [
@@ -92,14 +92,14 @@
           "全部专属检视与触发条件",
           "蓝图准确首发日、国服与地区差异"
         ],
-        "cataloguedCount": 2369,
-        "sourceBlueprintRows": 2369,
+        "cataloguedCount": 2416,
+        "sourceBlueprintRows": 2416,
         "sourceConfigObjectsExcluded": 1,
-        "gunCount": 2208,
-        "meleeCount": 135,
+        "gunCount": 2254,
+        "meleeCount": 136,
         "pendingCount": 26,
-        "uniqueRemoteImagesChecked": 2506,
-        "detailPagesChecked": 181,
+        "uniqueRemoteImagesChecked": 2554,
+        "detailPagesChecked": 182,
         "perEdition": [
           {
             "edition": "modern-warfare-2",
@@ -144,15 +144,15 @@
           {
             "edition": "modern-warfare-4",
             "title": "Modern Warfare IV",
-            "sourceRows": 30,
-            "catalogued": 30,
-            "ready": 30,
-            "guns": 28,
-            "melee": 2,
+            "sourceRows": 77,
+            "catalogued": 77,
+            "ready": 77,
+            "guns": 74,
+            "melee": 3,
             "pending": 0
           }
         ],
-        "decodedRemoteImages": 2506,
+        "decodedRemoteImages": 2550,
         "imageVerificationNote": "格式解码成功不等于单件身份通过；Logo占位和错用其他蓝图的图片继续pending。",
         "pendingReasonCounts": {
           "source_picture_belongs_to_different_blueprint": 3,
@@ -165,7 +165,7 @@
         "withInspectCount": 2,
         "mediaScope": "原作者特殊检视合集单独展示；只有交叉核实对应蓝图者关联至详情，未匹配的视频不重复计入皮肤数量。",
         "weaponClassificationAudit": {
-          "baseGroupsChecked": 315,
+          "baseGroupsChecked": 328,
           "authoritativeBasePages": 17,
           "unresolvedTypeConflicts": 0,
           "unresolvedCategoryConflicts": 0
@@ -174,7 +174,7 @@
       "source": {
         "name": "GamesAtlas public PC blueprint catalogue",
         "url": "https://www.gamesatlas.com/cod-warzone-2-blueprints/",
-        "retrievedAt": "2026-11-02T18:40:55.517724+00:00",
+        "retrievedAt": "2026-11-24T02:08:47Z",
         "type": "community"
       }
     },
@@ -182,24 +182,24 @@
       "id": "cod-mobile",
       "name": "使命召唤手游",
       "url": "data/weapon-skins/cod-mobile.json",
-      "count": 4269,
+      "count": 4273,
       "meleeCount": 626,
       "withVideoCount": 4,
       "withAnimationCount": 203,
-      "updatedAt": "2026-11-02T17:22:12Z",
+      "updatedAt": "2026-11-24T02:10:57Z",
       "coverage": {
         "status": "catalogued",
         "complete": false,
-        "sourceRecordCount": 4471,
-        "cataloguedCount": 4269,
-        "weaponCount": 177,
-        "gunCount": 3643,
+        "sourceRecordCount": 4472,
+        "cataloguedCount": 4273,
+        "weaponCount": 179,
+        "gunCount": 3647,
         "meleeCount": 626,
         "withVideoCount": 4,
         "videoCount": 4,
         "withAnimationCount": 203,
-        "sourcePageCount": 134,
-        "pagesWithSkinImages": 127,
+        "sourcePageCount": 135,
+        "pagesWithSkinImages": 128,
         "sameAssetAliasesMerged": 16,
         "unavailableSourcePages": [
           {
@@ -219,8 +219,8 @@
         "chinaArticleIndexComplete": true,
         "chinaArticleIndexPages": 99,
         "chinaArticleCount": 990,
-        "chinaBlueprintSectionCount": 440,
-        "chinaBlueprintCount": 384,
+        "chinaBlueprintSectionCount": 425,
+        "chinaBlueprintCount": 387,
         "chinaWithInspectCount": 6,
         "chinaWithAnimationCount": 203,
         "chinaUnavailableArticleCount": 0
@@ -229,18 +229,18 @@
         "name": "Zilliongamer COD Mobile 武器皮肤图鉴 / 官方动作选集",
         "type": "community_catalogue",
         "url": "https://zilliongamer.com/call-of-duty-mobile/c/skins-list/call-of-duty-mobile-skins-list",
-        "retrievedAt": "2026-11-02T16:58:09.664871+00:00"
+        "retrievedAt": "2026-11-24T02:08:59.841991+00:00"
       }
     },
     {
       "id": "cf-mobile",
       "name": "穿越火线手游",
       "url": "data/weapon-skins/cf-mobile.json",
-      "count": 831,
+      "count": 844,
       "meleeCount": 132,
       "withVideoCount": 3,
-      "withAnimationCount": 406,
-      "updatedAt": "2026-11-02T18:11:03.573970Z",
+      "withAnimationCount": 420,
+      "updatedAt": "2026-11-24T02:13:44.145028Z",
       "coverage": {
         "status": "partial",
         "complete": false,
@@ -249,129 +249,129 @@
         "historicalCataloguedCount": 324,
         "baselineCount": 252,
         "newLegacyCount": 76,
-        "newOfficialCount": 503,
+        "newOfficialCount": 516,
         "officialSourceMergeCount": 14,
-        "newMediaCount": 790,
-        "officialArticleCount": 1666,
-        "officialCandidateArticleCount": 1666,
+        "newMediaCount": 34,
+        "officialArticleCount": 1675,
+        "officialCandidateArticleCount": 1675,
         "officialArticleUnavailableCount": 0,
-        "officialUniqueArticleIndexCount": 7769,
-        "officialClaimedArticleTotal": 7769,
+        "officialUniqueArticleIndexCount": 7789,
+        "officialClaimedArticleTotal": 7789,
         "officialIndexComplete": true,
-        "officialWindowClaimedTotal": 7769,
+        "officialWindowClaimedTotal": 7789,
         "officialYearWindows": [
           {
             "window": "2010",
             "claimedTotal": 0,
             "firstPageCount": 0,
-            "retrievedAt": "2026-11-02T17:25:58.566011Z"
+            "retrievedAt": "2026-11-24T02:08:37.422479Z"
           },
           {
             "window": "2011",
             "claimedTotal": 0,
             "firstPageCount": 0,
-            "retrievedAt": "2026-11-02T17:25:58.565455Z"
+            "retrievedAt": "2026-11-24T02:08:37.448618Z"
           },
           {
             "window": "2012",
             "claimedTotal": 0,
             "firstPageCount": 0,
-            "retrievedAt": "2026-11-02T17:25:58.563703Z"
+            "retrievedAt": "2026-11-24T02:08:37.439579Z"
           },
           {
             "window": "2013",
             "claimedTotal": 0,
             "firstPageCount": 0,
-            "retrievedAt": "2026-11-02T17:25:58.566292Z"
+            "retrievedAt": "2026-11-24T02:08:37.445618Z"
           },
           {
             "window": "2014",
             "claimedTotal": 0,
             "firstPageCount": 0,
-            "retrievedAt": "2026-11-02T17:25:58.566119Z"
+            "retrievedAt": "2026-11-24T02:08:37.450617Z"
           },
           {
             "window": "2015",
             "claimedTotal": 0,
             "firstPageCount": 0,
-            "retrievedAt": "2026-11-02T17:25:58.636137Z"
+            "retrievedAt": "2026-11-24T02:08:37.596907Z"
           },
           {
             "window": "2016",
             "claimedTotal": 0,
             "firstPageCount": 0,
-            "retrievedAt": "2026-11-02T17:25:58.635741Z"
+            "retrievedAt": "2026-11-24T02:08:37.617473Z"
           },
           {
             "window": "2017",
             "claimedTotal": 0,
             "firstPageCount": 0,
-            "retrievedAt": "2026-11-02T17:25:58.634903Z"
+            "retrievedAt": "2026-11-24T02:08:37.605425Z"
           },
           {
             "window": "2018",
             "claimedTotal": 104,
             "firstPageCount": 50,
-            "retrievedAt": "2026-11-02T17:25:58.674486Z"
+            "retrievedAt": "2026-11-24T02:08:37.683278Z"
           },
           {
             "window": "2019",
             "claimedTotal": 146,
             "firstPageCount": 50,
-            "retrievedAt": "2026-11-02T17:23:30.925596Z"
+            "retrievedAt": "2026-11-24T02:08:37.686278Z"
           },
           {
             "window": "2020",
             "claimedTotal": 262,
             "firstPageCount": 50,
-            "retrievedAt": "2026-11-02T17:26:21.676231Z"
+            "retrievedAt": "2026-11-24T02:08:37.834646Z"
           },
           {
             "window": "2021",
             "claimedTotal": 976,
             "firstPageCount": 50,
-            "retrievedAt": "2026-11-02T17:26:21.704188Z"
+            "retrievedAt": "2026-11-24T02:08:37.834646Z"
           },
           {
             "window": "2022",
             "claimedTotal": 1030,
             "firstPageCount": 50,
-            "retrievedAt": "2026-11-02T17:26:21.699375Z"
+            "retrievedAt": "2026-11-24T02:08:37.845679Z"
           },
           {
             "window": "2023",
             "claimedTotal": 1904,
             "firstPageCount": 50,
-            "retrievedAt": "2026-11-02T17:26:21.703183Z"
+            "retrievedAt": "2026-11-24T02:08:37.907941Z"
           },
           {
             "window": "2024",
             "claimedTotal": 1926,
             "firstPageCount": 50,
-            "retrievedAt": "2026-11-02T17:26:21.699018Z"
+            "retrievedAt": "2026-11-24T02:08:37.919457Z"
           },
           {
             "window": "2025",
             "claimedTotal": 1053,
             "firstPageCount": 50,
-            "retrievedAt": "2026-11-02T17:26:21.783776Z"
+            "retrievedAt": "2026-11-24T02:08:38.112390Z"
           },
           {
             "window": "2026",
-            "claimedTotal": 368,
+            "claimedTotal": 388,
             "firstPageCount": 50,
-            "retrievedAt": "2026-11-02T17:26:21.815582Z"
+            "retrievedAt": "2026-11-24T02:08:38.104882Z"
           }
         ],
         "officialOldestIndexedDate": "2018-06-11 18:04:20",
-        "officialNewestIndexedDate": "2026-10-31 09:19:29",
-        "categoryPageCount": 75,
-        "cataloguedCount": 831,
+        "officialNewestIndexedDate": "2026-11-23 20:27:09",
+        "categoryPageCount": 41,
+        "cataloguedCount": 844,
         "excluded": {
           "legacyPrototypeThrowableOrUnresolved": 138,
           "legacyNameDuplicate": 2
         },
-        "scope": "4399七类武器目录全部实际分页；官网枪械道具栏目用公开stime/etime按年份分窗，逐页校验时间范围、ID与total，完整枚举本轮7769篇栏目文章。该索引不等于全游戏皮肤目录，仅正文单件外观和动作关联通过者收录。",
+        "scope": "4399七类武器目录全部实际分页；官网枪械道具栏目用公开stime/etime按年份分窗，逐页校验时间范围、ID与total，完整枚举本轮7789篇栏目文章。该索引不等于全游戏皮肤目录，仅正文单件外观和动作关联通过者收录。",
         "mediaScope": "保留原官方视频与GIF，新增原稿明确对应武器的GIF；检视需紧邻原文明确说明。来源作者可能为社区创作者，腾讯CDN托管不等于官方作者。GIF不计为视频。",
         "remaining": [
           "该官网栏目之外的历史武器/皮肤及后续新增",
@@ -380,21 +380,21 @@
           "精确首发日期与当前版本效果"
         ],
         "note": "CFM国服目录；不与CF端游或CFHD混用，武器变体与纯皮肤差异保留。",
-        "readyCount": 831,
+        "readyCount": 844,
         "pendingImageCount": 0,
         "pendingChromaImageCount": 0,
-        "gunCount": 699,
+        "gunCount": 712,
         "meleeCount": 132,
         "withVideoCount": 3,
-        "withAnimationCount": 406,
-        "withMediaCount": 406,
+        "withAnimationCount": 420,
+        "withMediaCount": 420,
         "retainedHistoricalCount": 0
       },
       "source": {
         "name": "CFM官网枪械道具栏目与4399全分类图鉴",
         "url": "https://cfm.qq.com/web201801/strategy.shtml?type=1",
         "type": "community_catalogue",
-        "retrievedAt": "2026-11-02T18:11:03.573970Z"
+        "retrievedAt": "2026-11-24T02:13:44.145028Z"
       }
     },
     {
@@ -405,7 +405,7 @@
       "meleeCount": 184,
       "withVideoCount": 14,
       "withAnimationCount": 17,
-      "updatedAt": "2026-11-02T17:40:34.956981Z",
+      "updatedAt": "2026-11-24T02:19:27.673259Z",
       "coverage": {
         "status": "partial",
         "complete": false,
@@ -439,7 +439,7 @@
         "name": "CFHD 数据中心（非官方）与 CFHD 官网展示",
         "url": "https://www.crossfirehd.com/weapons.html",
         "type": "community_catalogue",
-        "retrievedAt": "2026-11-02T17:40:34.956981Z"
+        "retrievedAt": "2026-11-24T02:19:27.673259Z"
       }
     },
     {
