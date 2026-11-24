@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-24T02:27:22Z",
-  "total": 15468,
+  "updatedAt": "2026-11-24T02:44:49.720769+00:00",
+  "total": 13331,
   "games": [
     {
       "id": "valorant",
@@ -46,18 +46,18 @@
       "id": "delta-force",
       "name": "三角洲行动",
       "url": "data/weapon-skins/delta-force.json",
-      "count": 11,
+      "count": 19,
       "meleeCount": 6,
-      "withVideoCount": 11,
+      "withVideoCount": 19,
       "withAnimationCount": 0,
-      "updatedAt": "2026-11-24T02:11:01.907314+00:00",
+      "updatedAt": "2026-11-24T02:44:49.720769+00:00",
       "coverage": {
         "status": "partial",
         "catalogScope": "curated_featured",
         "complete": false,
-        "entryCount": 11,
-        "entriesWithVideo": 11,
-        "liveMetadataRefreshed": false,
+        "entryCount": 19,
+        "entriesWithVideo": 19,
+        "liveMetadataRefreshed": true,
         "note": "首批精选资料，不代表本游戏全部历史皮肤。动作说明、视频身份与实际片段核验分别记录；未将首次采集时间或预告日期当作实际上线日期。",
         "remaining": [
           "完整历史皮肤目录",
@@ -440,40 +440,6 @@
         "url": "https://www.crossfirehd.com/weapons.html",
         "type": "community_catalogue",
         "retrievedAt": "2026-11-24T02:19:27.673259Z"
-      }
-    },
-    {
-      "id": "cs2",
-      "name": "CS2",
-      "url": "data/weapon-skins/cs2.json",
-      "count": 2145,
-      "meleeCount": 696,
-      "withVideoCount": 0,
-      "withAnimationCount": 0,
-      "updatedAt": "2026-11-23T06:13:45Z",
-      "coverage": {
-        "sourceRecordCount": 2246,
-        "cataloguedCount": 2145,
-        "excluded": {
-          "手套": 94,
-          "装备": 7
-        },
-        "gunCount": 1449,
-        "meleeCount": 696,
-        "weaponCount": 54,
-        "withVideoCount": 0,
-        "videoCount": 0,
-        "reviewedVideoCount": 0,
-        "scope": "本次上游按涂装聚合的枪械与刀皮目录，排除手套、装备与探员；不是每个磨损、模板和单件库存的枚举。",
-        "mediaScope": "上游仅提供静态资源；第一人称检视录像另行关联，不将图片或游戏内检视链接称为动作视频。",
-        "retainedHistoricalCount": 0,
-        "status": "catalogued"
-      },
-      "source": {
-        "name": "ByMykel/CSGO-API",
-        "type": "community_catalogue",
-        "url": "https://github.com/ByMykel/CSGO-API",
-        "retrievedAt": "2026-11-23T06:13:45Z"
       }
     },
     {

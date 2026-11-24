@@ -167,6 +167,22 @@ DELTA = [
      "官方视频简介介绍白金配色、矩阵结构与金属设计；该系列于2026年3月25日至5月23日限时上架。对应系列宣传封面，动作细节待观看核实。", []),
     ("gold-matrix-m4a1", "BV1DbQqBUEc1", "M4A1 · 鎏金矩阵", "M4A1", "gun", "突击步枪", "",
      "官方视频简介介绍白金配色、矩阵结构与金属设计；该系列于2026年3月25日至5月23日限时上架。对应系列宣传封面，动作细节待观看核实。", []),
+    ("metal-life-0", "BV16JDxBAEiC", "M249 · 金属生命", "M249", "gun", "轻机枪", "",
+     "工业风格与精密线路设计；官方简介列明4月10日至5月7日限时上架。摘要依据官方视频简介，封面为系列或单品宣传图，动作待观看核实。", []),
+    ("metal-life-1", "BV16JDxBAEiC", "G3 · 金属生命", "G3", "gun", "战斗步枪", "",
+     "工业风格与精密线路设计；官方简介列明4月10日至5月7日限时上架。摘要依据官方视频简介，封面为系列或单品宣传图，动作待观看核实。", []),
+    ("metal-life-2", "BV16JDxBAEiC", "AS Val · 金属生命", "AS Val", "gun", "突击步枪", "",
+     "工业风格与精密线路设计；官方简介列明4月10日至5月7日限时上架。摘要依据官方视频简介，封面为系列或单品宣传图，动作待观看核实。", []),
+    ("precision-0", "BV193kTBjEBe", "AS Val · 精密维护", "AS Val", "gun", "突击步枪", "",
+     "科技冷白基调与金属传导线设计；官方简介列明1月16日至2月12日限时上架。摘要依据官方视频简介，封面为系列或单品宣传图，动作待观看核实。", []),
+    ("precision-1", "BV193kTBjEBe", "G3 · 精密维护", "G3", "gun", "战斗步枪", "",
+     "科技冷白基调与金属传导线设计；官方简介列明1月16日至2月12日限时上架。摘要依据官方视频简介，封面为系列或单品宣传图，动作待观看核实。", []),
+    ("precision-2", "BV193kTBjEBe", "QCQ171 · 精密维护", "QCQ171", "gun", "冲锋枪", "",
+     "科技冷白基调与金属传导线设计；官方简介列明1月16日至2月12日限时上架。摘要依据官方视频简介，封面为系列或单品宣传图，动作待观看核实。", []),
+    ("tomb-raider-0", "BV1nxovBrEpc", "M14 · 古墓丽影", "M14", "gun", "射手步枪", "",
+     "联动捆绑包内的M14枪皮；官方简介列明4月30日至6月13日限时上架，可使用限时三角券兑换。摘要依据官方视频简介，封面为系列或单品宣传图，动作待观看核实。", []),
+    ("qingfeng-0", "BV143bg62Er2", "QJB201 · 青锋", "QJB201", "gun", "轻机枪", "",
+     "景德镇御窑博物院联动枪皮；官方简介列明9月4日至17日参与繁星计划免费获取。摘要依据官方视频简介，封面为系列或单品宣传图，动作待观看核实。", []),
 ]
 
 
@@ -192,8 +208,8 @@ def delta_skins(offline: bool) -> list[dict]:
             "rightsNote": "源稿标注未经作者授权禁止转载；通过原站播放器观看，保留作者与来源。",
         }]
         entry["tags"] = [rarity, *contains] if rarity else contains
-        if slug.startswith("gold-matrix-"):
-            if weapon not in meta.get("desc", "") or "鎏金矩阵" not in meta["title"]:
+        if slug.startswith(("gold-matrix-", "metal-life-", "precision-", "tomb-raider-", "qingfeng-")):
+            if weapon not in meta.get("desc", "") or name.split(" · ")[-1] not in meta["title"]:
                 raise ValueError("Named weapon is missing from the official video description")
             receipt = json.loads((CACHE / ("delta-" + slug + ".meta.json")).read_text(encoding="utf-8"))
             checked_at = receipt["retrievedAt"][:10]

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sync public VALORANT and CS2 cosmetic catalogues into local static snapshots.
+"""Sync the active public VALORANT cosmetic catalogue into local static snapshots.
 
 This command never publishes the site. Generic game-client preview videos are
 kept as previews; their presence is not evidence of a reviewed inspect clip.
@@ -411,7 +411,6 @@ SPECIFICATIONS = {
         "valorant-tiers-zh": VAL_BASE + "/contenttiers?language=zh-CN",
         "valorant-version": VAL_BASE + "/version",
     },
-    "cs2": {"cs2-skins-zh": CS_BASE + "/zh-CN/skins.json", "cs2-skins-en": CS_BASE + "/en/skins.json"},
 }
 
 
@@ -449,7 +448,7 @@ def sync_game(game: str, offline: bool):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--game", choices=["all", "valorant", "cs2"], default="all")
+    parser.add_argument("--game", choices=["all", "valorant"], default="all")
     parser.add_argument("--offline", action="store_true", help="仅使用已成功保存的来源缓存重建，不将缓存日期改为今天")
     options = parser.parse_args()
     coverage_path = PUBLIC / "sync-coverage.json"

@@ -9,7 +9,6 @@ const WeaponSkins = (() => {
     { id: 'cod-mobile', name: '使命召唤手游', aliases: 'call of duty mobile codm cod mobile 使命召唤手游', file: 'cod-mobile.json' },
     { id: 'cf-mobile', name: '穿越火线手游', aliases: 'cfm cf mobile 穿越火线 枪战王者', file: 'cf-mobile.json' },
     { id: 'cfhd', name: 'CFHD', aliases: 'cfhd 穿越火线 高清竞技大区', file: 'cfhd.json' },
-    { id: 'cs2', name: 'CS2', aliases: '反恐精英 counter strike csgo', file: 'cs2.json' },
     { id: 'apex', name: 'Apex Legends', aliases: 'apex 英雄 传家宝', file: 'apex.json' }
   ];
   const archive = { entries: [], snapshots: new Map(), manifest: null, manifestPromise: null, promise: null, status: 'idle',
@@ -222,7 +221,7 @@ const WeaponSkins = (() => {
       (animations ? ' · ' + animations + ' 款含动图' : '') + ' · ' + inspections + ' 款含检视资料';
     document.getElementById('skinShownCount').textContent = '已展示 ' + visible.length + ' / ' + entries.length + ' 款';
     document.getElementById('loadMoreSkins').hidden = visible.length >= entries.length;
-    document.getElementById('skinStats').innerHTML = [[scoped.length, '皮肤目录'], [scoped.filter(entry => entry.weaponType === 'melee').length, '刀与近战'],
+    document.getElementById('skinStats').innerHTML = [[scoped.filter(entry => entry.weaponType === 'gun').length, '枪械皮肤'], [scoped.filter(entry => entry.weaponType === 'melee').length, '刀与近战'],
       [scoped.filter(entry => mediaList(entry).length).length, '含动作资料']].map(([number, label]) => '<div><dd>' + number.toLocaleString('zh-CN') + '</dd><dt>' + label + '</dt></div>').join('');
     const note = document.getElementById('skinLoadStatus');
     note.hidden = !archive.failures.length;
@@ -449,7 +448,7 @@ const WeaponSkins = (() => {
       if (!target) return;
       if (target.hasAttribute('data-skin-retry')) { ensure(true); render(); return; }
       if (target.hasAttribute('data-skin-reset')) { reset(); state.query = ''; document.getElementById('searchInput').value = ''; }
-      if (target.dataset.skinGame) { archive.game = target.dataset.skinGame; archive.edition = archive.weapon = archive.rarity = 'all'; }
+      if (target.dataset.skinGame) { archive.game = target.dataset.skinGame; archive.type = archive.media = archive.edition = archive.weapon = archive.rarity = 'all'; }
       archive.limit = 24; syncFilterRoute(); render();
     });
     for (const [id, key] of [['skinTypeSelect', 'type'], ['skinEditionSelect', 'edition'], ['skinWeaponSelect', 'weapon'], ['skinRaritySelect', 'rarity'], ['skinMediaSelect', 'media'], ['skinSortSelect', 'sort']]) {

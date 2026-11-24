@@ -5,7 +5,7 @@ const assert = require('node:assert/strict');
 const vm = require('node:vm');
 const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
-const gameIds = ['valorant', 'delta-force', 'call-of-duty', 'cod-mobile', 'cf-mobile', 'cfhd', 'cs2', 'apex'];
+const gameIds = ['valorant', 'delta-force', 'call-of-duty', 'cod-mobile', 'cf-mobile', 'cfhd', 'apex'];
 const prefixes = { valorant: /^val-/, 'delta-force': /^delta-/, 'call-of-duty': /^cod-/, 'cod-mobile': /^codm-/, 'cf-mobile': /^cfm-/, cfhd: /^cfhd-/, cs2: /^cs2-/, apex: /^apex-/ };
 const read = file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
 function http(value, message) {

@@ -65,7 +65,7 @@ def main():
     files = ['index.html', 'card-view.js', 'card-view.css', 'app.js', 'workspace.js', 'maps.js', 'styles.css', 'ugc.js', 'ugc.css',
              'workspace.css', 'tactical-items.css', 'tactical-items.js', 'item-demos.js', 'data/tactical-items.json',
              'weapon-skins.js', 'weapon-skins.css', 'data/weapon-skins/manifest.json',
-             'data/weapon-skins/valorant.json', 'data/weapon-skins/cs2.json', 'data/weapon-skins/delta-force.json',
+             'data/weapon-skins/valorant.json', 'data/weapon-skins/delta-force.json',
              'data/weapon-skins/call-of-duty.json', 'data/weapon-skins/apex.json',
              'data/weapon-skins/cod-mobile.json', 'data/weapon-skins/cf-mobile.json', 'data/weapon-skins/cfhd.json',
              'ff-patches.js', 'data/free-fire-patches.json', 'core-updates.js', 'data/core-updates.json', 'data/modes.json', 'data/maps.json',

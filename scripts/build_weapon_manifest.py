@@ -8,7 +8,7 @@ GAMES = [
     ("valorant", "无畏契约"), ("delta-force", "三角洲行动"),
     ("call-of-duty", "使命召唤"), ("cod-mobile", "使命召唤手游"),
     ("cf-mobile", "穿越火线手游"), ("cfhd", "CFHD"),
-    ("cs2", "CS2"), ("apex", "Apex Legends"),
+    ("apex", "Apex Legends"),
 ]
 SOURCE_INDEX_FIELDS = {'name', 'type', 'url', 'retrievedAt', 'feedUrl', 'feedBuild', 'feedExtractedAt', 'rightsNote'}
 
