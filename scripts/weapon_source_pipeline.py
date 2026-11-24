@@ -219,12 +219,18 @@ def html_news(http, provider, full=False):
         raise ValueError('No article links found; source layout may have changed')
     result, issues = [], []
     for url in candidates[:provider.get('limit',12)*(3 if full else 1)]:
+        body = ''
         try:
-            item = article_news(http.get(url).decode('utf-8', errors='replace'), url, provider)
+            body = http.get(url).decode('utf-8', errors='replace')
+            item = article_news(body, url, provider)
             if item:
                 result.append(item)
         except Exception as error:
-            issues.append({'reason':'article_fetch_or_parse_failed','sourceUrl':url,'detail':str(error),'requiresModel':False})
+            issue = {'reason':'article_fetch_or_parse_failed','sourceUrl':url,'detail':str(error),'requiresModel':isinstance(error,ValueError)}
+            if body and isinstance(error,ValueError):
+                text = Page(body).text
+                issue.update(fingerprint=digest(text),excerpt=text[:1200])
+            issues.append(issue)
             if host in http.blocked:
                 break
     return result, issues
@@ -292,7 +298,10 @@ def reconcile_queue(previous, issues, run_id, max_items=5):
         item = {**(old or {}), **issue, 'id':key, 'status':old.get('status','pending') if old else 'pending',
             'firstSeenAt':old.get('firstSeenAt',stamp()) if old else stamp(), 'lastSeenAt':stamp(), 'lastRunId':run_id}
         prior[key] = item
-        if item['status']=='pending' and not item.get('offeredToModelAt') and issue.get('requiresModel') and len(batch)<max_items:
+    ordered = sorted(prior.values(),key=lambda item:item.get('publishedDate',item['firstSeenAt']),reverse=True)
+    ordered.sort(key=lambda item:item['reason']!='unparsed_official_change')
+    for item in ordered:
+        if item['status']=='pending' and not item.get('offeredToModelAt') and item.get('requiresModel') and len(batch)<max_items:
             item['offeredToModelAt']=stamp()
             batch.append(item)
     return list(prior.values()), batch

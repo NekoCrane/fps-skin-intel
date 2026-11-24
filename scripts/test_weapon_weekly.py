@@ -77,6 +77,16 @@ class SourceTests(unittest.TestCase):
             weekly.rollback(saved)
             self.assertEqual(path.read_bytes(),b'previous successful snapshot')
 
+    def test_delayed_monitor_review_survives_an_unchanged_next_scan(self):
+        item={'game':'cfhd','reason':'unparsed_official_change','sourceUrl':'https://example.com/activity',
+            'fingerprint':'one-version','requiresModel':True}
+        queue,batch=source.reconcile_queue([],[item],'first-run',0)
+        self.assertEqual(batch,[])
+        queue,batch=source.reconcile_queue(queue,[],'next-run',5)
+        self.assertEqual(len(batch),1)
+        _,batch=source.reconcile_queue(queue,[],'third-run',5)
+        self.assertEqual(batch,[])
+
     def test_offline_mode_removes_live_refresh_flags(self):
         self.assertEqual(weekly.collector_args(['sync_weapon_cfhd.py','--refresh'],True),['sync_weapon_cfhd.py','--offline'])
 

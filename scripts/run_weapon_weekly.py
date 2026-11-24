@@ -152,7 +152,7 @@ def news_discovery(http, registry, games, full):
             report.update(status='offline_unavailable' if http.offline else 'failed', error=str(error))
             if not http.offline:
                 issues.append({'game':provider['game'],'sourceUrl':provider['url'],'reason':'discovery_failed',
-                    'detail':str(error)[:500], 'requiresModel':False})
+                    'detail':str(error)[:500], 'requiresModel':isinstance(error,ValueError)})
         if not http.offline:
             if report['status']=='success':
                 report['lastSuccessfulAt']=sources.stamp()
