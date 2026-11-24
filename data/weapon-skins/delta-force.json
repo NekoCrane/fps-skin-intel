@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "game": "delta-force",
-  "updatedAt": "2026-11-24T06:39:15.631919+00:00",
+  "updatedAt": "2026-11-24T07:15:52.785845+00:00",
   "source": {
     "name": "官方资料与经复核的原作者媒体选集",
     "url": "https://www.bilibili.com/video/BV11jdbB8EsB/",
@@ -20121,17 +20121,6 @@
       ]
     },
     {
-      "id": "delta-news-BV1Jp4t6LEpo",
-      "title": "11月7日，全新干员研究外观【银翼-雷霆之息】登场！",
-      "publishedDate": "2026-11-05",
-      "sourceUrl": "https://www.bilibili.com/video/BV1Jp4t6LEpo/",
-      "sourceName": "三角洲行动官方 · 哔哩哔哩",
-      "sourceType": "official",
-      "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/b04a50defaa4f7aec2873c87f199456d4a93d47b.jpg",
-      "publicationStatus": "ready",
-      "associatedSkinIds": []
-    },
-    {
       "id": "delta-news-BV1YR446eEAf",
       "title": "【王者之剑】全新典藏外观实录 | 11月5日，锋芒毕露！",
       "publishedDate": "2026-11-05",
@@ -20139,6 +20128,17 @@
       "sourceName": "三角洲行动官方 · 哔哩哔哩",
       "sourceType": "official",
       "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/17363c114660d91fed6c244e75eb73de7c62441b.jpg",
+      "publicationStatus": "ready",
+      "associatedSkinIds": []
+    },
+    {
+      "id": "delta-news-BV1Jp4t6LEpo",
+      "title": "11月7日，全新干员研究外观【银翼-雷霆之息】登场！",
+      "publishedDate": "2026-11-05",
+      "sourceUrl": "https://www.bilibili.com/video/BV1Jp4t6LEpo/",
+      "sourceName": "三角洲行动官方 · 哔哩哔哩",
+      "sourceType": "official",
+      "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/b04a50defaa4f7aec2873c87f199456d4a93d47b.jpg",
       "publicationStatus": "ready",
       "associatedSkinIds": []
     },
@@ -20236,6 +20236,21 @@
       ]
     },
     {
+      "id": "delta-news-BV1e6aJ6bEiL",
+      "title": "【死神玫瑰Mk.Ⅱ 】系列外观实录 | 暗夜绽放，致命锋芒！",
+      "publishedDate": "2026-09-29",
+      "sourceUrl": "https://www.bilibili.com/video/BV1e6aJ6bEiL/",
+      "sourceName": "三角洲行动官方 · 哔哩哔哩",
+      "sourceType": "official",
+      "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/204360a0bc3857b2abbdd5aeef4f70632f0d546a.jpg",
+      "publicationStatus": "ready",
+      "associatedSkinIds": [
+        "delta-official-d538d381cf2cc643",
+        "delta-official-9ee6fdce8cff9f33",
+        "delta-official-096db9b96672b8b4"
+      ]
+    },
+    {
       "id": "delta-news-BV1YraJ6ZEBa",
       "title": "【哈夫克科技】系列外观实录 | 精密造物，制胜战场！",
       "publishedDate": "2026-09-29",
@@ -20263,21 +20278,6 @@
         "delta-official-e06d085708c735ff",
         "delta-official-9b1fb9395efa252b",
         "delta-official-a00498633cb379db"
-      ]
-    },
-    {
-      "id": "delta-news-BV1e6aJ6bEiL",
-      "title": "【死神玫瑰Mk.Ⅱ 】系列外观实录 | 暗夜绽放，致命锋芒！",
-      "publishedDate": "2026-09-29",
-      "sourceUrl": "https://www.bilibili.com/video/BV1e6aJ6bEiL/",
-      "sourceName": "三角洲行动官方 · 哔哩哔哩",
-      "sourceType": "official",
-      "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/204360a0bc3857b2abbdd5aeef4f70632f0d546a.jpg",
-      "publicationStatus": "ready",
-      "associatedSkinIds": [
-        "delta-official-d538d381cf2cc643",
-        "delta-official-9ee6fdce8cff9f33",
-        "delta-official-096db9b96672b8b4"
       ]
     },
     {
@@ -20405,18 +20405,18 @@
       ]
     },
     {
-      "id": "delta-news-BV1Yn3161ED6",
-      "title": "【微缩蒸汽】系列外观实录 | 齿轮咬合，机械狂澜",
+      "id": "delta-news-BV1Yn3162Ekg",
+      "title": "【拾花】系列外观实录 | 硝烟散尽，朝花绽放",
       "publishedDate": "2026-07-30",
-      "sourceUrl": "https://www.bilibili.com/video/BV1Yn3161ED6/",
+      "sourceUrl": "https://www.bilibili.com/video/BV1Yn3162Ekg/",
       "sourceName": "三角洲行动官方 · 哔哩哔哩",
       "sourceType": "official",
-      "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/0758a674f942c3ef21c292f69e365819e93b6246.jpg",
+      "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/f0283ba78212a1d2856cd7c7f4f0af1f957e648d.jpg",
       "publicationStatus": "ready",
       "associatedSkinIds": [
-        "delta-official-8ebd53ff6dac1944",
-        "delta-official-260901e9b504708b",
-        "delta-official-37474ae8b073ce1e"
+        "delta-official-f2ca39b7d665a233",
+        "delta-official-1ba0743a1a823d70",
+        "delta-official-65d71489860aad2b"
       ]
     },
     {
@@ -20435,18 +20435,18 @@
       ]
     },
     {
-      "id": "delta-news-BV1Yn3162Ekg",
-      "title": "【拾花】系列外观实录 | 硝烟散尽，朝花绽放",
+      "id": "delta-news-BV1Yn3161ED6",
+      "title": "【微缩蒸汽】系列外观实录 | 齿轮咬合，机械狂澜",
       "publishedDate": "2026-07-30",
-      "sourceUrl": "https://www.bilibili.com/video/BV1Yn3162Ekg/",
+      "sourceUrl": "https://www.bilibili.com/video/BV1Yn3161ED6/",
       "sourceName": "三角洲行动官方 · 哔哩哔哩",
       "sourceType": "official",
-      "thumbnailUrl": "https://i1.hdslb.com/bfs/archive/f0283ba78212a1d2856cd7c7f4f0af1f957e648d.jpg",
+      "thumbnailUrl": "https://i0.hdslb.com/bfs/archive/0758a674f942c3ef21c292f69e365819e93b6246.jpg",
       "publicationStatus": "ready",
       "associatedSkinIds": [
-        "delta-official-f2ca39b7d665a233",
-        "delta-official-1ba0743a1a823d70",
-        "delta-official-65d71489860aad2b"
+        "delta-official-8ebd53ff6dac1944",
+        "delta-official-260901e9b504708b",
+        "delta-official-37474ae8b073ce1e"
       ]
     },
     {

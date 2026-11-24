@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "overlapDays": 14,
+  "maxModelItems": 5,
+  "news": [
+    {"id":"cod-official", "game":"call-of-duty", "name":"Call of Duty 官方博客", "type":"html", "url":"https://www.callofduty.com/blog", "articlePath":"/blog/20", "limit":12, "excludeTitlePattern":"call of duty:?\\s*mobile|codm"},
+    {"id":"codm-official", "game":"cod-mobile", "name":"Call of Duty Mobile 官方博客", "type":"html", "url":"https://www.callofduty.com/blog", "articlePath":"/blog/20", "limit":20, "includeTitlePattern":"call of duty:?\\s*mobile|codm"},
+    {"id":"apex-official", "game":"apex", "name":"EA / Apex Legends 官方", "type":"html", "url":"https://www.ea.com/games/apex-legends/apex-legends/news", "articlePath":"/games/apex-legends/apex-legends/news/", "limit":12},
+    {"id":"valorant-official", "game":"valorant", "name":"VALORANT 官方新闻", "type":"html", "url":"https://playvalorant.com/en-us/news/", "articlePath":"/en-us/news/", "limit":12},
+    {"id":"delta-bilibili", "game":"delta-force", "name":"三角洲行动官方 · 哔哩哔哩", "type":"bilibili", "ownerId":3494376565115651, "ownerName":"三角洲行动", "url":"https://space.bilibili.com/3494376565115651/upload/video"},
+    {"id":"valorant-bilibili", "game":"valorant", "name":"无畏契约官方 · 哔哩哔哩", "type":"bilibili", "ownerId":147546636, "ownerName":"无畏契约", "url":"https://space.bilibili.com/147546636/upload/video"},
+    {"id":"cfm-bilibili", "game":"cf-mobile", "name":"穿越火线官方 · 手游投稿", "type":"bilibili", "ownerId":315554376, "ownerName":"穿越火线", "url":"https://space.bilibili.com/315554376/upload/video", "includeContentPattern":"CF手游|穿越火线手游|枪战王者|\\bCFM\\b"},
+    {"id":"cfhd-official-monitor", "game":"cfhd", "name":"CFHD 官方活动页", "type":"monitor", "url":"https://cfhd.cf.qq.com/"}
+  ],
+  "jobs": {
+    "valorant":[["sync_weapon_catalogs.py","--game","valorant"]],
+    "delta-force":[["research_weapon_delta_bilibili.py","--refresh-recent-days","14"],["sync_weapon_curated.py","--game","delta-force"]],
+    "call-of-duty":[["sync_weapon_cod_pc.py"],["enrich_weapon_cod_pc.py"]],
+    "cod-mobile":[["sync_weapon_codm.py"],["sync_weapon_codm_cn.py","--refresh"]],
+    "cf-mobile":[["sync_weapon_cfm.py","--refresh"]],
+    "cfhd":[["sync_weapon_cfhd.py","--refresh"]],
+    "apex":[["sync_weapon_apex.py","--resume"]]
+  }
+}

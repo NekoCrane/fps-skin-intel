@@ -137,6 +137,8 @@ APEX 首次先运行主同步器联网建立基础目录，再运行 `sync_weapo
 
 ## 周更与视频补采
 
+2026-11-24起采用[脚本流水线](weapon-skins-automation.md)：`python scripts/run_weapon_weekly.py --publish`统一执行发现、原采集器、资讯合并、异常队列、校验、构建与发布；正常流程不调用模型。信源配置在source-registry.json，新增待判断事项最多5条，其余保留本地日志，不向模型输入完整目录。Windows计划任务安装入口见该文档；旧Codex调度仅在新任务注册核对成功后暂停。
+
 每周一北京时间11:00逐游戏刷新，源码维护在 weapon-skins 分支。通用 sync_weapon_catalogs.py 当前仅负责无畏契约；三角洲、Apex、COD 端游、CODM 国际服与国服、CFM、CFHD须分别执行对应脚本。记录每款的成功、无新增或失败原因。
 
 固定执行顺序：

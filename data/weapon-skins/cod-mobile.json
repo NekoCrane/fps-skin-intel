@@ -243171,5 +243171,40 @@
       }
     }
   ],
-  "historicalSkins": []
+  "historicalSkins": [],
+  "sourceUpdates": [
+    {
+      "id": "codm-official-3f285413a1160dd5",
+      "title": "Introducing Call of Duty: Mobile Season 10 — 7th Anniversary",
+      "publishedDate": "2026-11-04",
+      "sourceUrl": "https://www.callofduty.com/blog/2026/11/call-of-duty-mobile-season-10-7th-anniversary",
+      "sourceName": "Call of Duty Mobile 官方博客",
+      "sourceType": "official",
+      "thumbnailUrl": "https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/body/codm/s10-anniversary/CODM-S10-26-TOUT.jpg",
+      "publicationStatus": "ready",
+      "associatedSkinIds": []
+    },
+    {
+      "id": "codm-official-bd026887b4f77ca6",
+      "title": "Get the Shattered Relay Weapon Blueprint in Call of Duty: Mobile as a Call of Duty: Modern Warfare 4 Pre-order Bonus",
+      "publishedDate": "2026-10-12",
+      "sourceUrl": "https://www.callofduty.com/blog/2026/10/call-of-duty-mobile-modern-warfare-4-preorder-bonus",
+      "sourceName": "Call of Duty Mobile 官方博客",
+      "sourceType": "official",
+      "thumbnailUrl": "https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/body/mw4/CODM-MW4-TOUT.jpg",
+      "publicationStatus": "ready",
+      "associatedSkinIds": []
+    },
+    {
+      "id": "codm-official-96b14c1cb5f429ef",
+      "title": "Introducing Call of Duty: Mobile Season 9 — Vampires vs Werewolves",
+      "publishedDate": "2026-10-07",
+      "sourceUrl": "https://www.callofduty.com/blog/2026/10/call-of-duty-mobile-season-9-vampires-werewolves",
+      "sourceName": "Call of Duty Mobile 官方博客",
+      "sourceType": "official",
+      "thumbnailUrl": "https://imgs.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/body/codm/s9-vampires-werewolves/CODM-S9-VW-ANNOUNCEMENT-TOUT.jpg",
+      "publicationStatus": "ready",
+      "associatedSkinIds": []
+    }
+  ]
 }
